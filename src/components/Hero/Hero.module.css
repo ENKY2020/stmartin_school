@@ -1,0 +1,764 @@
+.hero {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(218, 174, 53, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f7f5ef 0%, #f1eee7 55%, #e8e5dc 100%);
+}
+
+/* ================= BACKGROUND ================= */
+
+.backgroundGlow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  right: -250px;
+  top: -280px;
+  background: rgba(22, 59, 52, 0.07);
+  filter: blur(30px);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      rgba(22, 59, 52, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 59, 52, 0.04) 1px,
+      transparent 1px
+    );
+  background-size: 55px 55px;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1280px, calc(100% - 80px));
+  margin: 0 auto;
+
+  min-height: 760px;
+
+  display: grid;
+  grid-template-columns: 43% 57%;
+  align-items: center;
+
+  gap: 30px;
+}
+
+/* ================= LEFT CONTENT ================= */
+
+.content {
+  position: relative;
+  z-index: 5;
+  padding: 90px 0 70px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #173c34;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+.eyebrowLine {
+  width: 42px;
+  height: 2px;
+  background: #d5a928;
+}
+
+.title {
+  margin: 0;
+
+  color: #193d35;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.8rem, 5.3vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -3px;
+  font-weight: 500;
+}
+
+.title span {
+  color: #c29521;
+}
+
+.title em {
+  font-style: normal;
+  color: #173c34;
+}
+
+.description {
+  max-width: 530px;
+
+  margin: 32px 0;
+
+  color: #65716d;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ================= BUTTONS ================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 55px;
+}
+
+.outlineButton,
+.primaryButton {
+  min-height: 55px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 0 24px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.outlineButton {
+  color: #173c34;
+  border: 1px solid rgba(23, 60, 52, 0.25);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.outlineButton:hover {
+  background: #173c34;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.primaryButton {
+  background: #d6a72c;
+  color: #173c34;
+  box-shadow: 0 12px 25px rgba(183, 138, 25, 0.2);
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  background: #e3b73d;
+}
+
+/* ================= TRUST ================= */
+
+.trustPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-left: 2px solid rgba(213, 169, 40, 0.5);
+  padding-left: 20px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.trustNumber {
+  color: #c29521;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.trustItem strong {
+  display: block;
+
+  color: #1d4038;
+
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+
+.trustItem p {
+  margin: 4px 0 0;
+
+  color: #7b8581;
+  font-size: 12px;
+}
+
+/* ================= VISUAL COLLAGE ================= */
+
+.visual {
+  position: relative;
+
+  height: 640px;
+
+  margin-top: 35px;
+}
+
+/* GOLD DECORATION */
+
+.goldBlock {
+  position: absolute;
+
+  width: 220px;
+  height: 250px;
+
+  right: 0;
+  top: -20px;
+
+  background: #d5a928;
+
+  opacity: 0.92;
+}
+
+.outlineSquare {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: 35px;
+  bottom: 5px;
+
+  border: 1px solid rgba(23, 60, 52, 0.2);
+}
+
+/* ================= IMAGE CARDS ================= */
+
+.imageCard {
+  position: absolute;
+  overflow: hidden;
+
+  background: #ddd;
+
+  box-shadow:
+    0 25px 55px rgba(25, 48, 42, 0.16);
+
+  isolation: isolate;
+}
+
+.image {
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.imageCard:hover .image {
+  transform: scale(1.06);
+}
+
+/* ================= BUS — MAIN IMAGE ================= */
+
+.busImage {
+  width: 78%;
+  height: 390px;
+
+  top: 15px;
+  left: 0;
+
+  z-index: 2;
+
+  animation: mainFloat 8s ease-in-out infinite;
+}
+
+.busImage .image {
+  object-position: center;
+}
+
+/* ================= LEADERSHIP ================= */
+
+.leadershipImage {
+  width: 43%;
+  height: 250px;
+
+  right: 0;
+  top: 270px;
+
+  z-index: 4;
+
+  border: 8px solid #f6f3ec;
+
+  animation: leadershipFloat 7s ease-in-out infinite;
+}
+
+.leadershipImage .image {
+  object-position: center;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievementImage {
+  width: 36%;
+  height: 210px;
+
+  left: 10%;
+  bottom: -15px;
+
+  z-index: 3;
+
+  border: 7px solid #f6f3ec;
+
+  animation: achievementFloat 9s ease-in-out infinite;
+}
+
+/* ================= IMAGE OVERLAYS ================= */
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 35, 30, 0.72),
+      rgba(10, 35, 30, 0.05) 55%
+    );
+
+  z-index: 1;
+}
+
+.smallImageOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(15, 44, 38, 0.62),
+      transparent 55%
+    );
+
+  z-index: 1;
+}
+
+/* ================= IMAGE LABELS ================= */
+
+.busCaption {
+  position: absolute;
+
+  left: 25px;
+  bottom: 20px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: white;
+}
+
+.busCaption > span {
+  color: #e1b63c;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.busCaption strong {
+  display: block;
+
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.busCaption p {
+  margin: 4px 0 0;
+
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.smallImageLabel {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 15px;
+  bottom: 13px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: white;
+}
+
+.smallImageLabel span {
+  color: #e0b43b;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.smallImageLabel p {
+  margin: 0;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+/* ================= EXPERIENCE CARD ================= */
+
+.experienceCard {
+  position: absolute;
+
+  width: 260px;
+
+  right: 14%;
+  bottom: 5px;
+
+  z-index: 6;
+
+  padding: 28px 30px;
+
+  background: #173c34;
+  color: white;
+
+  box-shadow: 0 20px 45px rgba(16, 48, 40, 0.25);
+
+  animation: cardFloat 7s ease-in-out infinite;
+}
+
+.cardEyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #dfb743;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.experienceCard h3 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+  font-size: 29px;
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.experienceCard h3 span {
+  color: #dfb743;
+}
+
+.cardLine {
+  width: 45px;
+  height: 1px;
+
+  margin: 20px 0;
+
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.experienceCard p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* ================= BOTTOM ================= */
+
+.scrollIndicator {
+  position: absolute;
+
+  left: max(40px, calc((100vw - 1280px) / 2));
+  bottom: 25px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #7d8581;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.scrollLine {
+  position: relative;
+
+  width: 65px;
+  height: 1px;
+
+  overflow: hidden;
+
+  background: rgba(23, 60, 52, 0.2);
+}
+
+.scrollLine span {
+  position: absolute;
+
+  width: 25px;
+  height: 100%;
+
+  background: #d5a928;
+
+  animation: scrollMove 2s linear infinite;
+}
+
+.sectionNumber {
+  position: absolute;
+
+  right: 40px;
+  bottom: 25px;
+
+  color: rgba(23, 60, 52, 0.35);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes mainFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes leadershipFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes achievementFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes scrollMove {
+  from {
+    left: -30px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1100px) {
+  .container {
+    width: min(100% - 50px, 1100px);
+    grid-template-columns: 42% 58%;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .visual {
+    transform: scale(0.9);
+    transform-origin: center right;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .container {
+    width: min(100% - 36px, 700px);
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: auto;
+
+    gap: 0;
+  }
+
+  .content {
+    padding: 85px 0 45px;
+  }
+
+  .title {
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .visual {
+    width: 100%;
+    height: 550px;
+
+    margin-top: 0;
+
+    transform: none;
+  }
+
+  .busImage {
+    width: 88%;
+    height: 310px;
+  }
+
+  .leadershipImage {
+    width: 48%;
+    height: 190px;
+
+    top: 240px;
+  }
+
+  .achievementImage {
+    width: 43%;
+    height: 165px;
+
+    bottom: 5px;
+    left: 2%;
+  }
+
+  .experienceCard {
+    width: 210px;
+
+    right: 5%;
+    bottom: 25px;
+
+    padding: 22px;
+  }
+
+  .experienceCard h3 {
+    font-size: 24px;
+  }
+
+  .scrollIndicator,
+  .sectionNumber {
+    display: none;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 520px) {
+  .content {
+    padding-top: 65px;
+  }
+
+  .title {
+    letter-spacing: -2px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .outlineButton,
+  .primaryButton {
+    width: 100%;
+  }
+
+  .trustPoints {
+    display: none;
+  }
+
+  .visual {
+    height: 470px;
+  }
+
+  .busImage {
+    height: 270px;
+  }
+
+  .leadershipImage {
+    width: 53%;
+    height: 170px;
+
+    top: 205px;
+  }
+
+  .achievementImage {
+    width: 46%;
+    height: 145px;
+  }
+
+  .experienceCard {
+    width: 180px;
+
+    padding: 18px;
+
+    right: 2%;
+  }
+
+  .experienceCard h3 {
+    font-size: 21px;
+  }
+}

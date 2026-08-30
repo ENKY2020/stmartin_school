@@ -1,0 +1,274 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 7%;
+  background: linear-gradient(
+    135deg,
+    #12352d 0%,
+    #1d4b3f 55%,
+    #315e50 100%
+  );
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(214, 170, 63, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(255, 255, 255, 0.05),
+      transparent 25%
+    );
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.content {
+  max-width: 720px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #d6aa3f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.content h2 {
+  margin: 18px 0 22px;
+
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.content h2 span {
+  color: #e1b84d;
+}
+
+.content p {
+  max-width: 650px;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  margin-bottom: 34px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 16px 25px;
+
+  text-decoration: none;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background: #d6aa3f;
+  color: #16382f;
+}
+
+.primaryButton span {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover {
+  background: #f0c85d;
+  transform: translateY(-3px);
+}
+
+.primaryButton:hover span {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.secondaryButton:hover {
+  background: #ffffff;
+  color: #16382f;
+  transform: translateY(-3px);
+}
+
+.sideCard {
+  min-width: 290px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(10px);
+}
+
+.cardIcon {
+  width: 55px;
+  height: 55px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d6aa3f;
+
+  color: #e1b84d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.sideCard div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sideCard span {
+  color: #d6aa3f;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.sideCard strong {
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.cardArrow {
+  margin-left: auto;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 1.6rem;
+
+  transition: transform 0.3s ease;
+}
+
+.cardArrow:hover {
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .cta {
+    padding: 85px 6%;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+  }
+
+  .sideCard {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .cta {
+    padding: 70px 5%;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+
+  .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .sideCard {
+    min-width: 0;
+    padding: 20px;
+  }
+
+  .cardIcon {
+    width: 48px;
+    height: 48px;
+  }
+}

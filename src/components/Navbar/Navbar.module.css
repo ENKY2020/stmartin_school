@@ -1,0 +1,529 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid rgba(18, 56, 42, 0.08);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.navContainer {
+  width: min(100%, 1600px);
+  margin: 0 auto;
+
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px 38px;
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  flex-shrink: 0;
+}
+
+.logoPlaceholder {
+  width: 62px;
+  height: 62px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #173f31,
+      #0d2c21
+    );
+
+  border: 2px solid #d7aa28;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.14);
+}
+
+.logoPlaceholder span {
+  color: #f2c94c;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.1;
+}
+
+.brandText h1 {
+  margin: 0;
+
+  color: #173f31;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+}
+
+.brandText span {
+  margin-top: 3px;
+
+  color: #173f31;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.7px;
+}
+
+.brandText p {
+  margin: 6px 0 0;
+
+  color: #8b6b13;
+
+  font-size: 10px;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.desktopNav {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  white-space: nowrap;
+}
+
+.desktopNav a {
+  position: relative;
+
+  color: #24362f;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  transition:
+    color 0.25s ease;
+}
+
+.desktopNav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: #d6a720;
+
+  transition:
+    width 0.25s ease;
+}
+
+.desktopNav a:hover {
+  color: #b18712;
+}
+
+.desktopNav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.navActions {
+  display: flex;
+  align-items: stretch;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.actionButton {
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: none;
+
+  padding: 0 13px;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.portalButton {
+  background:
+    linear-gradient(
+      135deg,
+      #123d2d,
+      #0b2b20
+    );
+
+  border-radius: 5px 0 0 5px;
+}
+
+.applyButton {
+  background:
+    linear-gradient(
+      135deg,
+      #1c513d,
+      #103c2d
+    );
+}
+
+.donateButton {
+  color: #23342d;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0c63e,
+      #d5a419
+    );
+
+  border-radius: 0 5px 5px 0;
+}
+
+.arrow {
+  font-size: 14px;
+
+  line-height: 1;
+
+  margin-top: -3px;
+}
+
+
+/* =========================================
+   DROPDOWN MENUS
+========================================= */
+
+.dropdownMenu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 205px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border: 1px solid rgba(18, 56, 42, 0.08);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+}
+
+.dropdownMenu a {
+  padding: 11px 12px;
+
+  color: #294036;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  border-radius: 5px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdownMenu a:hover {
+  color: #ffffff;
+
+  background: #173f31;
+}
+
+
+/* =========================================
+   MOBILE TOGGLE
+========================================= */
+
+.mobileToggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(18, 56, 42, 0.15);
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.mobileToggle span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background: #173f31;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobileMenu {
+  display: none;
+
+  flex-direction: column;
+
+  padding: 15px 25px 25px;
+
+  background: #ffffff;
+
+  border-top:
+    1px solid rgba(18, 56, 42, 0.08);
+}
+
+.mobileMenu a {
+  padding: 13px 0;
+
+  color: #1d3329;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-bottom:
+    1px solid rgba(18, 56, 42, 0.07);
+}
+
+.mobileMenu a:hover {
+  color: #b18712;
+}
+
+.mobileDivider {
+  height: 1px;
+
+  margin: 10px 0;
+
+  background:
+    rgba(18, 56, 42, 0.12);
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+========================================= */
+
+@media (max-width: 1350px) {
+  .navContainer {
+    padding: 10px 24px;
+
+    gap: 18px;
+  }
+
+  .desktopNav {
+    gap: 14px;
+  }
+
+  .desktopNav a {
+    font-size: 11px;
+  }
+
+  .brandText h1 {
+    font-size: 16px;
+  }
+
+  .actionButton {
+    padding: 0 10px;
+
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .desktopNav,
+  .navActions {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: block;
+
+    margin-left: auto;
+  }
+
+  .navContainer {
+    min-height: 82px;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .navContainer {
+    min-height: 72px;
+
+    padding: 8px 18px;
+  }
+
+  .logoPlaceholder {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 10px;
+  }
+
+  .logoPlaceholder span {
+    font-size: 14px;
+  }
+
+  .brandText h1 {
+    font-size: 14px;
+  }
+
+  .brandText span {
+    font-size: 9px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .brandText p {
+    display: none;
+  }
+
+  .mobileToggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .brandText h1 {
+    font-size: 12px;
+  }
+
+  .brandText span {
+    font-size: 8px;
+  }
+
+  .logoPlaceholder {
+    width: 42px;
+    height: 42px;
+  }
+}
