@@ -1,48 +1,116 @@
 .highlights {
   position: relative;
   width: 100%;
-  background: #f7f5ef;
-  padding: 0 0 70px;
+  padding: 110px 0 90px;
+  background:
+    linear-gradient(
+      180deg,
+      #f7f5ef 0%,
+      #f4f2eb 100%
+    );
+  overflow: hidden;
+}
+
+.highlights::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: -260px;
+  right: -180px;
+  border: 1px solid rgba(23, 61, 50, 0.06);
+  box-shadow:
+    0 0 0 70px rgba(23, 61, 50, 0.025),
+    0 0 0 140px rgba(23, 61, 50, 0.015);
+  pointer-events: none;
 }
 
 .container {
+  position: relative;
+  z-index: 2;
   width: min(1280px, calc(100% - 64px));
   margin: 0 auto;
 }
 
-/* ===============================
+/* =================================
+   INTRODUCTION
+================================= */
+
+.intro {
+  max-width: 780px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: #b8861b;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+}
+
+.intro h2 {
+  margin: 0;
+
+  color: #173d32;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.intro p {
+  max-width: 700px;
+  margin: 24px auto 0;
+
+  color: #68736e;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =================================
    VALUE PILLARS
-================================ */
+================================= */
 
 .pillars {
-  position: relative;
-  z-index: 2;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
   background: #ffffff;
-  border-radius: 20px;
 
-  box-shadow: 0 15px 40px rgba(13, 48, 38, 0.12);
+  border: 1px solid #e8e3d8;
+  border-radius: 18px;
 
   overflow: hidden;
 
-  margin-top: -52px;
+  box-shadow:
+    0 18px 55px rgba(13, 48, 38, 0.08);
 }
 
 .pillar {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  position: relative;
 
-  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 270px;
+
+  padding: 34px 28px;
 
   border-right: 1px solid #e8e3d8;
 
   transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .pillar:last-child {
@@ -50,129 +118,328 @@
 }
 
 .pillar:hover {
-  background: #faf8f2;
-  transform: translateY(-3px);
+  z-index: 2;
+
+  background: #fcfbf7;
+
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 35px rgba(13, 48, 38, 0.08);
 }
 
-.iconWrapper {
-  flex-shrink: 0;
+/* =================================
+   ICON
+================================= */
 
-  width: 52px;
-  height: 52px;
+.iconWrapper {
+  width: 56px;
+  height: 56px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  margin-bottom: 26px;
+
   border-radius: 50%;
 
-  background: #f2f3ef;
+  background:
+    linear-gradient(
+      135deg,
+      #f5efe0,
+      #ede5d2
+    );
+
   color: #173d32;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pillar:hover .iconWrapper {
+  background: #173d32;
+  color: #e6b52e;
+
+  transform: rotate(-4deg) scale(1.05);
 }
 
 .iconWrapper svg {
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
 
   stroke-width: 1.7;
 }
+
+/* =================================
+   PILLAR CONTENT
+================================= */
 
 .pillarContent {
   min-width: 0;
 }
 
 .pillarContent h3 {
-  margin: 0 0 8px;
+  margin: 0 0 13px;
 
   color: #173d32;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-
-  line-height: 1.2;
+  font-size: 1.32rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .pillarContent p {
   margin: 0;
 
-  color: #65716d;
+  color: #68736e;
 
-  font-size: 0.88rem;
-  line-height: 1.65;
+  font-size: 0.92rem;
+  line-height: 1.75;
 }
 
-/* ===============================
-   STATISTICS BAR
-================================ */
+/* =================================
+   ACADEMIC PERFORMANCE BANNER
+================================= */
+
+.performanceBanner {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+
+  margin-top: 28px;
+  padding: 48px 55px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f3529,
+      #173d32 55%,
+      #214a3e
+    );
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 22px 50px rgba(13, 48, 38, 0.18);
+}
+
+.performanceBanner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: 100px;
+  top: -220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(230, 181, 46, 0.16);
+
+  box-shadow:
+    0 0 0 60px rgba(230, 181, 46, 0.03),
+    0 0 0 120px rgba(230, 181, 46, 0.02);
+
+  pointer-events: none;
+}
+
+.performanceContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+}
+
+.performanceLabel {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #e6b52e;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.performanceContent h3 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.performanceContent p {
+  max-width: 650px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+/* =================================
+   AVERAGE GRADE CARD
+================================= */
+
+.gradeCard {
+  position: relative;
+  z-index: 2;
+
+  width: 190px;
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    );
+
+  border: 1px solid rgba(230, 181, 46, 0.45);
+
+  backdrop-filter: blur(8px);
+}
+
+.gradeCard span {
+  margin-bottom: 8px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.gradeCard strong {
+  display: block;
+
+  color: #e6b52e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.gradeCard small {
+  margin-top: 10px;
+
+  color: #ffffff;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =================================
+   STATISTICS
+================================= */
 
 .statistics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  margin-top: 20px;
+  margin-top: 28px;
 
-  background: linear-gradient(
-    90deg,
-    #0f3529 0%,
-    #173d32 50%,
-    #0f3529 100%
-  );
+  background: #ffffff;
 
-  border-radius: 10px;
+  border: 1px solid #e8e3d8;
+  border-radius: 16px;
 
   overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(13, 48, 38, 0.06);
 }
 
 .stat {
   position: relative;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  gap: 7px;
+  min-height: 150px;
 
-  padding: 20px 15px;
+  padding: 25px 20px;
 
-  color: #ffffff;
+  text-align: center;
+
+  border-right: 1px solid #e8e3d8;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-.stat:not(:last-child)::after {
-  content: "";
+.stat:last-child {
+  border-right: none;
+}
 
-  position: absolute;
-
-  right: 0;
-  top: 25%;
-
-  width: 1px;
-  height: 50%;
-
-  background: rgba(255, 255, 255, 0.15);
+.stat:hover {
+  background: #faf8f2;
 }
 
 .statNumber {
-  color: #e6b52e;
+  display: block;
 
-  font-size: 1.35rem;
-  font-weight: 800;
+  margin-bottom: 9px;
+
+  color: #173d32;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1;
 }
 
 .statLabel {
-  color: rgba(255, 255, 255, 0.88);
+  display: block;
 
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: #8a938f;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
-/* ===============================
+/* =================================
    TABLET
-================================ */
+================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .pillars {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillar {
+    min-height: 230px;
   }
 
   .pillar:nth-child(2) {
@@ -182,31 +449,54 @@
   .pillar:nth-child(-n + 2) {
     border-bottom: 1px solid #e8e3d8;
   }
+
+  .performanceBanner {
+    padding: 42px;
+    gap: 40px;
+  }
 }
 
-/* ===============================
+/* =================================
    MOBILE
-================================ */
+================================= */
 
 @media (max-width: 700px) {
   .highlights {
-    padding-bottom: 50px;
+    padding: 75px 0 65px;
   }
 
   .container {
     width: min(100% - 32px, 600px);
   }
 
+  .intro {
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-size: 0.64rem;
+    letter-spacing: 2px;
+  }
+
+  .intro h2 {
+    font-size: clamp(2.3rem, 11vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .intro p {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
   .pillars {
     grid-template-columns: 1fr;
-
-    margin-top: -30px;
-
     border-radius: 16px;
   }
 
   .pillar {
-    padding: 22px 18px;
+    min-height: auto;
+
+    padding: 28px 24px;
 
     border-right: none;
     border-bottom: 1px solid #e8e3d8;
@@ -216,33 +506,92 @@
     border-bottom: none;
   }
 
+  .iconWrapper {
+    margin-bottom: 18px;
+  }
+
+  .performanceBanner {
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    margin-top: 22px;
+    padding: 35px 28px;
+
+    border-radius: 16px;
+  }
+
+  .performanceContent h3 {
+    font-size: 2rem;
+  }
+
+  .gradeCard {
+    width: 100%;
+    min-height: 160px;
+  }
+
+  .gradeCard strong {
+    font-size: 4rem;
+  }
+
   .statistics {
     grid-template-columns: repeat(2, 1fr);
 
+    margin-top: 22px;
+  }
+
+  .stat {
+    min-height: 130px;
+
+    border-right: 1px solid #e8e3d8;
+    border-bottom: 1px solid #e8e3d8;
+  }
+
+  .stat:nth-child(2n) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 24px, 600px);
+  }
+
+  .highlights {
+    padding-top: 60px;
+  }
+
+  .pillar {
+    padding: 25px 20px;
+  }
+
+  .performanceBanner {
+    padding: 30px 22px;
+  }
+
+  .statistics {
     border-radius: 12px;
   }
 
   .stat {
-    padding: 18px 10px;
-
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .stat:nth-child(2)::after {
-    display: none;
-  }
-
-  .stat:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 20px 10px;
   }
 
   .statNumber {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 
   .statLabel {
-    font-size: 0.78rem;
-    text-align: center;
+    font-size: 0.58rem;
+    letter-spacing: 0.8px;
   }
 }

@@ -9,7 +9,8 @@ const highlights = [
       </svg>
     ),
     title: "Academic Excellence",
-    description: "Quality education from experienced educators.",
+    description:
+      "Focused teaching and learning that supports steady academic growth and achievement.",
   },
   {
     icon: (
@@ -20,8 +21,9 @@ const highlights = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    title: "Holistic Development",
-    description: "Building character, leadership and life skills.",
+    title: "Leadership & Character",
+    description:
+      "Nurturing responsible, disciplined and confident students prepared for life.",
   },
   {
     icon: (
@@ -33,8 +35,9 @@ const highlights = [
         <path d="M16 10h.01" />
       </svg>
     ),
-    title: "Modern Facilities",
-    description: "State-of-the-art facilities that support learning.",
+    title: "Supportive Learning Environment",
+    description:
+      "A school environment designed to help every learner grow academically and personally.",
   },
   {
     icon: (
@@ -45,27 +48,28 @@ const highlights = [
         <path d="M12 3a14 14 0 0 0 0 18" />
       </svg>
     ),
-    title: "Global Perspective",
-    description: "Preparing students to thrive in a changing world.",
+    title: "Student Life",
+    description:
+      "Opportunities beyond the classroom through clubs, activities and school experiences.",
   },
 ];
 
 const statistics = [
   {
-    number: "1200+",
-    label: "Students",
+    number: "1,100+",
+    label: "Student Enrollment",
   },
   {
-    number: "45+",
-    label: "Teachers",
+    number: "30+",
+    label: "Dedicated Teachers",
   },
   {
-    number: "98%",
+    number: "62%",
     label: "Pass Rate",
   },
   {
-    number: "20+",
-    label: "Clubs & Activities",
+    number: "10+",
+    label: "Student Clubs",
   },
 ];
 
@@ -73,6 +77,22 @@ export default function Highlights() {
   return (
     <section className={styles.highlights}>
       <div className={styles.container}>
+        <div className={styles.intro}>
+          <span className={styles.eyebrow}>WHY ST. MARTIN MWIBALE</span>
+
+          <h2>
+            Building Strong Foundations
+            <br />
+            For Future Success.
+          </h2>
+
+          <p>
+            At St. Martin Mwibale Secondary School, we combine academic
+            commitment, character development and meaningful student
+            experiences to help learners reach their full potential.
+          </p>
+        </div>
+
         {/* VALUE PILLARS */}
         <div className={styles.pillars}>
           {highlights.map((item) => (
@@ -85,6 +105,29 @@ export default function Highlights() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* PERFORMANCE HIGHLIGHT */}
+        <div className={styles.performanceBanner}>
+          <div className={styles.performanceContent}>
+            <span className={styles.performanceLabel}>
+              ACADEMIC PERFORMANCE
+            </span>
+
+            <h3>Committed to Continuous Improvement</h3>
+
+            <p>
+              Our learners continue to build strong academic foundations
+              supported by dedicated teachers and a focused learning
+              environment.
+            </p>
+          </div>
+
+          <div className={styles.gradeCard}>
+            <span>AVERAGE GRADE</span>
+            <strong>C</strong>
+            <small>PLAIN</small>
+          </div>
         </div>
 
         {/* STATISTICS */}

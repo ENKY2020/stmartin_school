@@ -1,339 +1,376 @@
 .hero {
   position: relative;
-  min-height: 760px;
+  min-height: 780px;
   overflow: hidden;
+  isolation: isolate;
+  color: #173a33;
+
   background:
     radial-gradient(
-      circle at 80% 20%,
-      rgba(218, 174, 53, 0.13),
+      circle at 85% 20%,
+      rgba(217, 169, 40, 0.16),
       transparent 28%
     ),
-    linear-gradient(135deg, #f7f5ef 0%, #f1eee7 55%, #e8e5dc 100%);
+    linear-gradient(
+      135deg,
+      #faf9f5 0%,
+      #f4f2ec 48%,
+      #e9e9e3 100%
+    );
 }
 
-/* ================= BACKGROUND ================= */
+/* =========================================
+   BACKGROUND DECORATION
+========================================= */
 
 .backgroundGlow {
   position: absolute;
-  width: 650px;
-  height: 650px;
+  width: 720px;
+  height: 720px;
+  top: -320px;
+  right: -220px;
+
   border-radius: 50%;
-  right: -250px;
-  top: -280px;
-  background: rgba(22, 59, 52, 0.07);
-  filter: blur(30px);
+  background: rgba(201, 154, 31, 0.1);
+  filter: blur(50px);
+
+  pointer-events: none;
+  z-index: -2;
 }
 
 .gridPattern {
   position: absolute;
   inset: 0;
+
   opacity: 0.28;
   pointer-events: none;
+  z-index: -1;
+
   background-image:
     linear-gradient(
-      rgba(22, 59, 52, 0.04) 1px,
+      rgba(23, 58, 51, 0.035) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(22, 59, 52, 0.04) 1px,
+      rgba(23, 58, 51, 0.035) 1px,
       transparent 1px
     );
-  background-size: 55px 55px;
+
+  background-size: 48px 48px;
 }
 
-/* ================= MAIN LAYOUT ================= */
+/* =========================================
+   MAIN CONTAINER
+========================================= */
 
 .container {
-  position: relative;
-  z-index: 2;
+  width: min(1320px, calc(100% - 80px));
+  min-height: 780px;
 
-  width: min(1280px, calc(100% - 80px));
   margin: 0 auto;
 
-  min-height: 760px;
-
   display: grid;
-  grid-template-columns: 43% 57%;
+  grid-template-columns: minmax(420px, 0.85fr) minmax(520px, 1.15fr);
   align-items: center;
+  gap: 64px;
 
-  gap: 30px;
+  padding: 72px 0 110px;
 }
 
-/* ================= LEFT CONTENT ================= */
+/* =========================================
+   LEFT CONTENT
+========================================= */
 
 .content {
   position: relative;
   z-index: 5;
-  padding: 90px 0 70px;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
 
   margin-bottom: 24px;
 
-  color: #173c34;
+  color: #53635f;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 2.2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .eyebrowLine {
+  display: block;
+
   width: 42px;
   height: 2px;
-  background: #d5a928;
+
+  background: #c99a1f;
 }
 
-.title {
+.mainTitle {
+  max-width: 690px;
   margin: 0;
 
-  color: #193d35;
-
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.8rem, 5.3vw, 6.5rem);
-  line-height: 0.92;
-  letter-spacing: -3px;
+  font-size: clamp(58px, 5.4vw, 88px);
   font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -3.5px;
+
+  color: #173a33;
 }
 
-.title span {
-  color: #c29521;
+.mainTitle span {
+  color: #b98519;
 }
 
-.title em {
+.mainTitle em {
   font-style: normal;
-  color: #173c34;
+  color: #173a33;
 }
 
 .description {
-  max-width: 530px;
+  max-width: 560px;
+  margin: 32px 0 0;
 
-  margin: 32px 0;
-
-  color: #65716d;
+  color: #63716d;
 
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-/* ================= BUTTONS ================= */
+/* =========================================
+   ACTIONS
+========================================= */
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 
-  margin-bottom: 55px;
+  margin-top: 36px;
 }
 
 .outlineButton,
 .primaryButton {
-  min-height: 55px;
+  min-height: 56px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 13px;
 
-  padding: 0 24px;
+  padding: 0 26px;
 
   text-decoration: none;
+  text-transform: uppercase;
 
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.3px;
 
   transition:
     transform 0.25s ease,
     background 0.25s ease,
-    color 0.25s ease;
+    color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .outlineButton {
-  color: #173c34;
-  border: 1px solid rgba(23, 60, 52, 0.25);
-  background: rgba(255, 255, 255, 0.35);
-}
+  color: #173a33;
 
-.outlineButton:hover {
-  background: #173c34;
-  color: white;
-  transform: translateY(-3px);
+  border: 1px solid rgba(23, 58, 51, 0.22);
+  background: rgba(255, 255, 255, 0.32);
 }
 
 .primaryButton {
-  background: #d6a72c;
-  color: #173c34;
-  box-shadow: 0 12px 25px rgba(183, 138, 25, 0.2);
+  color: #173a33;
+
+  border: 1px solid #d9a928;
+  background: #d9a928;
+
+  box-shadow:
+    0 12px 30px rgba(201, 154, 31, 0.2);
+}
+
+.outlineButton:hover,
+.primaryButton:hover {
+  transform: translateY(-3px);
+}
+
+.outlineButton:hover {
+  color: #ffffff;
+  border-color: #173a33;
+  background: #173a33;
 }
 
 .primaryButton:hover {
-  transform: translateY(-3px);
-  background: #e3b73d;
+  border-color: #c3921d;
+  background: #c3921d;
 }
 
-/* ================= TRUST ================= */
+/* =========================================
+   TRUST POINTS
+========================================= */
 
 .trustPoints {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 32px;
 
-  border-left: 2px solid rgba(213, 169, 40, 0.5);
-  padding-left: 20px;
+  margin-top: 48px;
 }
 
 .trustItem {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-start;
+  gap: 14px;
+
+  min-width: 190px;
 }
 
 .trustNumber {
-  color: #c29521;
+  padding-top: 4px;
 
-  font-size: 11px;
+  color: #b98519;
+
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .trustItem strong {
   display: block;
 
-  color: #1d4038;
+  color: #173a33;
 
-  font-family: Georgia, serif;
-  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .trustItem p {
-  margin: 4px 0 0;
+  max-width: 200px;
+  margin: 7px 0 0;
 
-  color: #7b8581;
-  font-size: 12px;
+  color: #78827f;
+
+  font-size: 13px;
+  line-height: 1.55;
 }
 
-/* ================= VISUAL COLLAGE ================= */
+/* =========================================
+   RIGHT VISUAL AREA
+========================================= */
 
 .visual {
   position: relative;
 
-  height: 640px;
+  min-height: 610px;
 
-  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding-bottom: 42px;
 }
-
-/* GOLD DECORATION */
 
 .goldBlock {
   position: absolute;
 
-  width: 220px;
-  height: 250px;
+  width: 270px;
+  height: 255px;
 
-  right: 0;
-  top: -20px;
+  top: 4px;
+  right: -10px;
 
-  background: #d5a928;
+  background:
+    linear-gradient(
+      135deg,
+      #d9a928,
+      #b98519
+    );
 
-  opacity: 0.92;
+  z-index: 0;
 }
 
 .outlineSquare {
   position: absolute;
 
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 
-  right: 35px;
-  bottom: 5px;
+  left: 5px;
+  bottom: 0;
 
-  border: 1px solid rgba(23, 60, 52, 0.2);
+  border: 1px solid rgba(23, 58, 51, 0.12);
+
+  z-index: 0;
 }
 
-/* ================= IMAGE CARDS ================= */
+/* =========================================
+   SLIDER
+========================================= */
 
-.imageCard {
-  position: absolute;
+.slider {
+  position: relative;
+
+  width: min(100%, 690px);
+  height: 510px;
+
+  margin-right: 18px;
+
   overflow: hidden;
 
-  background: #ddd;
+  background: #173a33;
 
   box-shadow:
-    0 25px 55px rgba(25, 48, 42, 0.16);
-
-  isolation: isolate;
-}
-
-.image {
-  object-fit: cover;
-
-  transition: transform 0.8s ease;
-}
-
-.imageCard:hover .image {
-  transform: scale(1.06);
-}
-
-/* ================= BUS — MAIN IMAGE ================= */
-
-.busImage {
-  width: 78%;
-  height: 390px;
-
-  top: 15px;
-  left: 0;
+    0 30px 75px rgba(17, 38, 33, 0.2);
 
   z-index: 2;
-
-  animation: mainFloat 8s ease-in-out infinite;
 }
 
-.busImage .image {
+.slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transform: scale(1.035);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.85s ease,
+    transform 6s ease;
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: scale(1);
+
+  pointer-events: auto;
+}
+
+.slideImage {
+  object-fit: cover;
   object-position: center;
+
+  transition:
+    transform 7s ease;
 }
 
-/* ================= LEADERSHIP ================= */
-
-.leadershipImage {
-  width: 43%;
-  height: 250px;
-
-  right: 0;
-  top: 270px;
-
-  z-index: 4;
-
-  border: 8px solid #f6f3ec;
-
-  animation: leadershipFloat 7s ease-in-out infinite;
+.activeSlide .slideImage {
+  transform: scale(1.055);
 }
 
-.leadershipImage .image {
-  object-position: center;
-}
-
-/* ================= ACHIEVEMENTS ================= */
-
-.achievementImage {
-  width: 36%;
-  height: 210px;
-
-  left: 10%;
-  bottom: -15px;
-
-  z-index: 3;
-
-  border: 7px solid #f6f3ec;
-
-  animation: achievementFloat 9s ease-in-out infinite;
-}
-
-/* ================= IMAGE OVERLAYS ================= */
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
 
 .imageOverlay {
   position: absolute;
@@ -341,117 +378,196 @@
 
   background:
     linear-gradient(
-      to top,
-      rgba(10, 35, 30, 0.72),
-      rgba(10, 35, 30, 0.05) 55%
-    );
-
-  z-index: 1;
-}
-
-.smallImageOverlay {
-  position: absolute;
-  inset: 0;
-
-  background:
+      90deg,
+      rgba(8, 28, 24, 0.58) 0%,
+      rgba(8, 28, 24, 0.22) 48%,
+      rgba(8, 28, 24, 0.04) 100%
+    ),
     linear-gradient(
-      to top,
-      rgba(15, 44, 38, 0.62),
-      transparent 55%
+      0deg,
+      rgba(8, 24, 21, 0.8) 0%,
+      rgba(8, 24, 21, 0.18) 48%,
+      transparent 70%
     );
-
-  z-index: 1;
 }
 
-/* ================= IMAGE LABELS ================= */
+/* =========================================
+   IMAGE TYPOGRAPHY
+   Dedicated safe zone on left-bottom
+========================================= */
 
-.busCaption {
+.imageContent {
   position: absolute;
 
-  left: 25px;
-  bottom: 20px;
+  left: 40px;
+  bottom: 42px;
 
-  z-index: 3;
+  width: min(62%, 420px);
 
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  z-index: 4;
 
-  color: white;
+  color: #ffffff;
 }
 
-.busCaption > span {
-  color: #e1b63c;
+.imageContent > div {
+  position: relative;
+}
 
-  font-size: 12px;
+.slideNumber {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #e1b43c;
+
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
-.busCaption strong {
-  display: block;
+.slideEyebrow {
+  margin: 0 0 10px;
 
-  font-family: Georgia, serif;
-  font-size: 19px;
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
 }
 
-.busCaption p {
-  margin: 4px 0 0;
+.imageContent h2 {
+  max-width: 430px;
+  margin: 0;
 
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 3.5vw, 56px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+
+  text-shadow:
+    0 3px 18px rgba(0, 0, 0, 0.22);
 }
 
-.smallImageLabel {
+.slideTag {
+  max-width: 340px;
+  margin: 14px 0 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SLIDER CONTROLS
+========================================= */
+
+.sliderControls {
   position: absolute;
 
-  z-index: 3;
-
-  left: 15px;
-  bottom: 13px;
+  right: 26px;
+  bottom: 26px;
 
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 16px;
 
-  color: white;
+  z-index: 6;
 }
 
-.smallImageLabel span {
-  color: #e0b43b;
-
-  font-size: 10px;
-  font-weight: 800;
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
-.smallImageLabel p {
-  margin: 0;
+.dot {
+  width: 7px;
+  height: 7px;
 
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.7px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  transition:
+    width 0.3s ease,
+    border-radius 0.3s ease,
+    background 0.3s ease;
 }
 
-/* ================= EXPERIENCE CARD ================= */
+.activeDot {
+  width: 28px;
+
+  border-radius: 10px;
+
+  background: #e1b43c;
+}
+
+.nextButton {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nextButton:hover {
+  color: #173a33;
+  background: #d9a928;
+
+  transform: translateX(4px);
+}
+
+/* =========================================
+   EXPERIENCE CARD
+   Moved below and away from image title
+========================================= */
 
 .experienceCard {
   position: absolute;
 
-  width: 260px;
+  left: -22px;
+  bottom: 0;
 
-  right: 14%;
-  bottom: 5px;
-
-  z-index: 6;
+  width: 285px;
 
   padding: 28px 30px;
 
-  background: #173c34;
-  color: white;
+  color: #ffffff;
+  background: #173a33;
 
-  box-shadow: 0 20px 45px rgba(16, 48, 40, 0.25);
+  box-shadow:
+    0 24px 55px rgba(12, 33, 29, 0.25);
 
-  animation: cardFloat 7s ease-in-out infinite;
+  z-index: 5;
+
+  animation: cardFloat 6s ease-in-out infinite;
 }
 
 .cardEyebrow {
@@ -459,134 +575,105 @@
 
   margin-bottom: 14px;
 
-  color: #dfb743;
+  color: #d9a928;
 
   font-size: 9px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
 }
 
 .experienceCard h3 {
   margin: 0;
 
-  font-family: Georgia, serif;
-  font-size: 29px;
-  line-height: 1.05;
-  font-weight: 500;
-}
+  color: #ffffff;
 
-.experienceCard h3 span {
-  color: #dfb743;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 .cardLine {
-  width: 45px;
-  height: 1px;
+  width: 44px;
+  height: 2px;
 
-  margin: 20px 0;
+  margin: 18px 0;
 
-  background: rgba(255, 255, 255, 0.4);
+  background: #d9a928;
 }
 
 .experienceCard p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
 
-  font-size: 11px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.65;
 }
 
-/* ================= BOTTOM ================= */
+/* =========================================
+   BOTTOM DETAILS
+========================================= */
 
 .scrollIndicator {
   position: absolute;
 
-  left: max(40px, calc((100vw - 1280px) / 2));
-  bottom: 25px;
-
-  z-index: 5;
+  left: max(40px, calc((100% - 1320px) / 2));
+  bottom: 34px;
 
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 
-  color: #7d8581;
+  color: #6e7a76;
 
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .scrollLine {
   position: relative;
 
-  width: 65px;
+  width: 70px;
   height: 1px;
 
   overflow: hidden;
 
-  background: rgba(23, 60, 52, 0.2);
+  background: rgba(23, 58, 51, 0.18);
 }
 
 .scrollLine span {
   position: absolute;
+  top: 0;
+  left: 0;
 
-  width: 25px;
-  height: 100%;
+  width: 28px;
+  height: 1px;
 
-  background: #d5a928;
+  background: #b98519;
 
-  animation: scrollMove 2s linear infinite;
+  animation: scrollMove 2.5s ease-in-out infinite;
 }
 
 .sectionNumber {
   position: absolute;
 
-  right: 40px;
-  bottom: 25px;
+  right: max(40px, calc((100% - 1320px) / 2));
+  bottom: 34px;
 
-  color: rgba(23, 60, 52, 0.35);
+  color: #68736f;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes mainFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes leadershipFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes achievementFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(9px);
-  }
-}
+/* =========================================
+   ANIMATIONS
+========================================= */
 
 @keyframes cardFloat {
   0%,
@@ -595,125 +682,259 @@
   }
 
   50% {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
   }
 }
 
 @keyframes scrollMove {
-  from {
-    left: -30px;
+  0% {
+    transform: translateX(-30px);
   }
 
-  to {
-    left: 100%;
+  50% {
+    transform: translateX(40px);
+  }
+
+  100% {
+    transform: translateX(110px);
   }
 }
 
-/* ================= TABLET ================= */
+/* =========================================
+   LARGE SCREENS
+========================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1500px) {
   .container {
-    width: min(100% - 50px, 1100px);
-    grid-template-columns: 42% 58%;
+    width: min(1420px, calc(100% - 120px));
   }
 
-  .title {
-    font-size: 4.5rem;
+  .hero,
+  .container {
+    min-height: 820px;
   }
 
   .visual {
-    transform: scale(0.9);
-    transform-origin: center right;
+    min-height: 650px;
+  }
+
+  .slider {
+    width: 720px;
+    height: 540px;
   }
 }
 
-/* ================= MOBILE ================= */
+/* =========================================
+   TABLET
+========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
   .hero {
     min-height: auto;
   }
 
   .container {
-    width: min(100% - 36px, 700px);
-
-    display: flex;
-    flex-direction: column;
+    width: min(100% - 50px, 1000px);
 
     min-height: auto;
 
-    gap: 0;
+    grid-template-columns: 1fr;
+    gap: 60px;
+
+    padding: 80px 0 130px;
   }
 
   .content {
-    padding: 85px 0 45px;
-  }
-
-  .title {
-    font-size: clamp(3.5rem, 15vw, 5.5rem);
+    max-width: 780px;
   }
 
   .description {
-    font-size: 15px;
+    max-width: 680px;
   }
 
   .visual {
     width: 100%;
-    height: 550px;
-
-    margin-top: 0;
-
-    transform: none;
+    min-height: 570px;
   }
 
-  .busImage {
-    width: 88%;
-    height: 310px;
-  }
-
-  .leadershipImage {
-    width: 48%;
-    height: 190px;
-
-    top: 240px;
-  }
-
-  .achievementImage {
-    width: 43%;
-    height: 165px;
-
-    bottom: 5px;
-    left: 2%;
+  .slider {
+    width: calc(100% - 35px);
+    margin-left: auto;
   }
 
   .experienceCard {
-    width: 210px;
-
-    right: 5%;
-    bottom: 25px;
-
-    padding: 22px;
+    left: 0;
   }
 
-  .experienceCard h3 {
-    font-size: 24px;
+  .scrollIndicator {
+    left: 25px;
   }
 
-  .scrollIndicator,
   .sectionNumber {
-    display: none;
+    right: 25px;
   }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 520px) {
-  .content {
-    padding-top: 65px;
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 36px);
+
+    padding: 65px 0 100px;
+    gap: 48px;
   }
 
-  .title {
-    letter-spacing: -2px;
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .mainTitle {
+    font-size: clamp(50px, 15vw, 70px);
+    letter-spacing: -2.5px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .outlineButton,
+  .primaryButton {
+    flex: 1;
+    min-width: 145px;
+
+    padding: 0 16px;
+
+    font-size: 9px;
+  }
+
+  .trustPoints {
+    gap: 24px;
+  }
+
+  .trustItem {
+    width: 100%;
+  }
+
+  .visual {
+    min-height: 510px;
+
+    padding-bottom: 35px;
+  }
+
+  .goldBlock {
+    width: 175px;
+    height: 180px;
+
+    top: 0;
+    right: -8px;
+  }
+
+  .outlineSquare {
+    width: 190px;
+    height: 190px;
+
+    left: 0;
+    bottom: 20px;
+  }
+
+  .slider {
+    width: 100%;
+    height: 420px;
+
+    margin-right: 0;
+  }
+
+  .imageContent {
+    left: 24px;
+    bottom: 30px;
+
+    width: 72%;
+  }
+
+  .slideNumber {
+    margin-bottom: 9px;
+
+    font-size: 9px;
+  }
+
+  .slideEyebrow {
+    margin-bottom: 8px;
+
+    font-size: 8px;
+  }
+
+  .imageContent h2 {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .slideTag {
+    max-width: 260px;
+
+    font-size: 11px;
+  }
+
+  .sliderControls {
+    right: 16px;
+    bottom: 18px;
+
+    gap: 12px;
+  }
+
+  .nextButton {
+    width: 38px;
+    height: 38px;
+  }
+
+  .experienceCard {
+    width: min(82%, 300px);
+
+    left: 0;
+    bottom: -20px;
+
+    padding: 24px;
+  }
+
+  .experienceCard h3 {
+    font-size: 26px;
+  }
+
+  .experienceCard p {
+    font-size: 12px;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+
+  .sectionNumber {
+    right: 20px;
+    bottom: 20px;
+
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .mainTitle {
+    font-size: 49px;
   }
 
   .actions {
@@ -726,39 +947,36 @@
     width: 100%;
   }
 
-  .trustPoints {
-    display: none;
-  }
-
   .visual {
-    height: 470px;
+    min-height: 475px;
   }
 
-  .busImage {
-    height: 270px;
+  .slider {
+    height: 380px;
   }
 
-  .leadershipImage {
-    width: 53%;
-    height: 170px;
-
-    top: 205px;
+  .imageContent {
+    width: 78%;
   }
 
-  .achievementImage {
-    width: 46%;
-    height: 145px;
+  .imageContent h2 {
+    font-size: 33px;
   }
 
   .experienceCard {
-    width: 180px;
-
-    padding: 18px;
-
-    right: 2%;
+    width: 86%;
   }
 
-  .experienceCard h3 {
-    font-size: 21px;
+  .dots {
+    gap: 5px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .activeDot {
+    width: 20px;
   }
 }
