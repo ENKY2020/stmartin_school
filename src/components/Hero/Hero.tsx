@@ -9,7 +9,7 @@ const heroSlides = [
   {
     id: "01",
     image: "/images/school/hero/school-bus.png",
-    alt: "St. Martin Mwibale Secondary School bus",
+    alt: "EDU RIDGE DEMO Secondary School bus",
     eyebrow: "STUDENT EXPERIENCE",
     title: "Safe Transport.",
     description:
@@ -19,7 +19,7 @@ const heroSlides = [
   {
     id: "02",
     image: "/images/school/hero/administration-block.png",
-    alt: "St. Martin Mwibale Secondary School administration block",
+    alt: "EDU RIDGE DEMO Secondary School administration block",
     eyebrow: "OUR CAMPUS",
     title: "A Growing Campus.",
     description:
@@ -29,7 +29,7 @@ const heroSlides = [
   {
     id: "03",
     image: "/images/school/hero/boys-dormitory.png",
-    alt: "Boys dormitory at St. Martin Mwibale Secondary School",
+    alt: "Boys dormitory at EDU RIDGE DEMO Secondary School",
     eyebrow: "STUDENT LIFE",
     title: "Life Beyond Class.",
     description:
@@ -39,7 +39,7 @@ const heroSlides = [
   {
     id: "04",
     image: "/images/school/hero/girls-dormitory.png",
-    alt: "Girls dormitory at St. Martin Mwibale Secondary School",
+    alt: "Girls dormitory at EDU RIDGE DEMO Secondary School",
     eyebrow: "A CARING COMMUNITY",
     title: "A Home For Growth.",
     description:
@@ -49,7 +49,7 @@ const heroSlides = [
   {
     id: "05",
     image: "/images/school/hero/principal.png",
-    alt: "Principal of St. Martin Mwibale Secondary School",
+    alt: "Principal of EDU RIDGE DEMO Secondary School",
     eyebrow: "SCHOOL LEADERSHIP",
     title: "Leadership That Guides.",
     description:
@@ -59,7 +59,7 @@ const heroSlides = [
   {
     id: "06",
     image: "/images/school/hero/deputy-principal.png",
-    alt: "Deputy Principal of St. Martin Mwibale Secondary School",
+    alt: "Deputy Principal of EDU RIDGE DEMO Secondary School",
     eyebrow: "ACADEMIC GUIDANCE",
     title: "Guidance & Excellence.",
     description:
@@ -103,7 +103,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.eyebrow}>
             <span className={styles.eyebrowLine} />
-            <span>WELCOME TO ST. MARTIN MWIBALE</span>
+            <span>WELCOME TO EDU RIDGE DEMO</span>
           </div>
 
           <h1 className={styles.mainTitle}>

@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
 
           <div className={styles.brandText}>
-            <h1>ST. MARTIN MWIBALE</h1>
+            <h1>EDU RIDGE DEMO</h1>
             <span>SENIOR SCHOOL</span>
             <p>Excellence. Integrity. Service.</p>
           </div>

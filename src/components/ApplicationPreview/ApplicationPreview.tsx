@@ -118,7 +118,7 @@ export default function ApplicationPreview() {
 
             <h2>
               Your journey with
-              <span> St. Martin Mwibale begins here.</span>
+              <span> EDU RIDGE DEMO begins here.</span>
             </h2>
 
             <p>
@@ -164,7 +164,7 @@ export default function ApplicationPreview() {
 
             <h2>
               Apply to Join
-              <span> St. Martin Mwibale.</span>
+              <span> EduRise  Academy.</span>
             </h2>
 
             <p>

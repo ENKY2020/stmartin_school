@@ -18,7 +18,7 @@ export default function Discover() {
           </h2>
 
           <p className={styles.description}>
-            At St. Martin Mwibale Secondary School, education extends far
+            At EDU RIDGE DEMO Secondary School, education extends far
             beyond the classroom. We create an environment where students can
             learn, connect, explore and grow into confident, responsible
             individuals.
@@ -79,7 +79,7 @@ export default function Discover() {
           <div className={styles.mainImage}>
             <Image
               src="/images/school/school-bus.png"
-              alt="St. Martin Mwibale Secondary School transport"
+              alt="EDU RIDGE DEMO Secondary School transport"
               fill
               sizes="(max-width: 1000px) 100vw, 55vw"
               className={styles.image}
@@ -97,7 +97,7 @@ export default function Discover() {
           <div className={styles.leadershipImage}>
             <Image
               src="/images/school/school-leadership.png"
-              alt="St. Martin Mwibale Secondary School leadership"
+              alt="EDU RIDGE DEMO Secondary School leadership"
               fill
               sizes="(max-width: 1000px) 50vw, 28vw"
               className={styles.image}
@@ -112,7 +112,7 @@ export default function Discover() {
           <div className={styles.achievementImage}>
             <Image
               src="/images/school/student-achievements.png"
-              alt="Students celebrating achievement at St. Martin Mwibale"
+              alt="Students celebrating achievement at EDU RIDGE DEMO"
               fill
               sizes="(max-width: 1000px) 45vw, 24vw"
               className={styles.image}

@@ -78,7 +78,7 @@ export default function Highlights() {
     <section className={styles.highlights}>
       <div className={styles.container}>
         <div className={styles.intro}>
-          <span className={styles.eyebrow}>WHY ST. MARTIN MWIBALE</span>
+          <span className={styles.eyebrow}>WHY EDU RIDGE DEMO</span>
 
           <h2>
             Building Strong Foundations
@@ -87,7 +87,7 @@ export default function Highlights() {
           </h2>
 
           <p>
-            At St. Martin Mwibale Secondary School, we combine academic
+            At EDU RIDGE DEMO Secondary School, we combine academic
             commitment, character development and meaningful student
             experiences to help learners reach their full potential.
           </p>

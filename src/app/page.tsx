@@ -31,7 +31,7 @@ export default function Home() {
         <Highlights />
 
         {/* =========================
-            DISCOVER ST. MARTIN
+            DISCOVER EDU RISE
         ========================== */}
         <Discover />
 

@@ -33,7 +33,7 @@ export default function CallToAction() {
 
           <h2>
             Your Future Begins
-            <span> At St. Martin Mwibale.</span>
+            <span> At EDU RIDGE DEMO.</span>
           </h2>
 
           <p>
@@ -68,7 +68,7 @@ export default function CallToAction() {
             <div className={styles.cardIcon}>SM</div>
 
             <span className={styles.cardLabel}>
-              ST. MARTIN MWIBALE
+              EDU RIDGE DEMO
             </span>
           </div>
 

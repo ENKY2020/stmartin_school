@@ -28,7 +28,7 @@ export default function Footer() {
             <div className={styles.logo}>SM</div>
 
             <div>
-              <h3>ST. MARTIN MWIBALE</h3>
+              <h3>EDU RIDGE DEMO</h3>
               <span>SENIOR HIGH SCHOOL</span>
             </div>
           </div>
@@ -39,9 +39,9 @@ export default function Footer() {
           </p>
 
           <div className={styles.contactInfo}>
-            <p>📍 P.O. Box 123, Bungoma, Kenya</p>
-            <p>✉ info@stmartinmwibale.sc.ke</p>
-            <p>☎ +254 700 123 456</p>
+            <p>📍 P.O. Box 123, Nairobi, Kenya</p>
+            <p>✉ info@eduridgedemo.sc.ke</p>
+            <p>☎ +254 768 063 078</p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.bottomContainer}>
           <p>
-            © {new Date().getFullYear()} St. Martin Mwibale Senior High School.
+            © {new Date().getFullYear()} EDU RIDGE DEMO Senior High School.
             All Rights Reserved.
           </p>
 

@@ -79,7 +79,7 @@ export default function DonationPreview() {
           <h2>Make a Difference</h2>
 
           <p>
-            Support the future of St. Martin Mwibale students through a secure
+            Support the future of EDU RIDGE DEMO students through a secure
             contribution.
           </p>
         </div>

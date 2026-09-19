@@ -16,14 +16,16 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "St. Martin Mwibale Senior School",
-    template: "%s | St. Martin Mwibale Senior School",
+    default: "EduRise Senior School",
+    template: "%s | EDU RIDGE DEMO Senior School",
+
+
   },
   description:
-    "Nurturing academic excellence, discipline, character, and responsible future leaders at St. Martin Mwibale Senior School.",
+    "Nurturing academic excellence, discipline, character, and responsible future leaders at EDU RIDGE DEMO Senior School.",
 
   keywords: [
-    "St. Martin Mwibale Senior School",
+    "EDU RIDGE DEMO Senior School",
     "Mwibale School",
     "Senior School",
     "Secondary School",
